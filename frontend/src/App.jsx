@@ -3,7 +3,26 @@ import { useState, useEffect } from "react";
 import "./App.css";
 
 import { app, db } from "./firebaseConfig";
-import { collection, addDoc, getDocs } from "firebase/firestore";
+import {
+  doc,
+  collection,
+  addDoc,
+  getDoc,
+  getDocs,
+  setDoc,
+  deleteDoc,
+  query,
+  where,
+} from "firebase/firestore";
+
+/**
+ * Render user1's posts
+ * Create a New Post
+ * Delete a Post
+ * Update a Post
+ *
+ */
+
 /**
  *
  * users:{
@@ -26,33 +45,95 @@ import { collection, addDoc, getDocs } from "firebase/firestore";
  * }
  *
  */
-async function write() {
-  try {
-    const docRef = await addDoc(collection(db, "posts"), {
-      first: "mr",
-      last: "guy",
-      born: 18999999,
-    });
-    console.log("Document written with ID: ", docRef.id);
-  } catch (e) {
-    console.error("Error adding document: ", e);
-  }
-}
 
 function App() {
-  //const db = getFirestore();
+  //Unused
+  async function write(year) {
+    try {
+      const docRef = await addDoc(collection(db, "posts"), {
+        born: year,
+      });
+      console.log("Document written with ID: ", docRef.id);
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
+  }
 
-  // const [count, setCount] = useState(0);
-  // const [users, setUsers] = useState([]);
+  //Unused
+  //This sets the content of the LA in collection posts to the following, it either creates or overwrites
+  async function overWrite() {
+    await setDoc(doc(db, "posts", "LA"), {
+      name: "Los Angeles",
+      state: "CA",
+      country: "USA 2",
+    });
+    console.log("overwrite called");
+  }
 
-  // const userRef = collection(db, "posts");
+  //Used
+  //This is useful for creating something like a new post
+  async function newDoc() {
+    // Add a new document with a generated id.
+    const docRef = await addDoc(
+      collection(db, "/Users/UlY7Z2oUGbxRDNztYEWE/Posts"),
+      {
+        Destination: "city3",
+        Origin: "city2",
+      }
+    );
+    readAll();
+    //console.log("Document written with ID: ", docRef.id);
+  }
 
-  // useEffect(async () => {
-  //   // const querySnapshot = await getDocs(collection(db, "posts"));
-  //   // querySnapshot.forEach((doc) => {
-  //   //   console.log(`${doc.id} => ${doc.data()}`);
-  //   // });
-  // }, []);
+  //Used
+  //Depetes all the docs, add a where to be more specific
+  //https://firebase.google.com/docs/firestore/query-data/get-data
+  async function deleteCity() {
+    const q = query(collection(db, "/Users/UlY7Z2oUGbxRDNztYEWE/Posts"));
+    const querySnapshot = await getDocs(q);
+
+    querySnapshot.forEach(async (document) => {
+      // doc.data() is never undefined for query doc snapshots
+      //console.log(doc.id, " => ", doc.data());
+      await deleteDoc(
+        doc(db, "/Users/UlY7Z2oUGbxRDNztYEWE/Posts", document.id)
+      );
+    });
+    readAll();
+  }
+
+  //Unused
+  //Haven't yet created try catch to hadle case of document not there, but works otherwise
+  async function read(setData) {
+    const docRef = doc(db, "posts", "LA");
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      console.log("Document data:", docSnap.data());
+    } else {
+      // doc.data() will be undefined in this case
+      console.log("No such document!");
+    }
+    setData(docSnap.data());
+  }
+
+  //Used
+  //setData to be all of the posts
+  async function readAll() {
+    const q = query(collection(db, "/Users/UlY7Z2oUGbxRDNztYEWE/Posts"));
+    const querySnapshot = await getDocs(q);
+    setData([]);
+    querySnapshot.forEach((doc) => {
+      // doc.data() is never undefined for query doc snapshots
+      //console.log(doc.id, " => ", doc.data());
+      setData((data) => [doc.data(), ...data]);
+      console.log(doc.data().Origin);
+    });
+    console.log("done");
+    console.log(data);
+  }
+
+  const [data, setData] = useState([]);
 
   return (
     <div className="App">
@@ -68,13 +149,29 @@ function App() {
         //   );
         // })
       }
+
       <button
         onClick={() => {
-          write();
+          newDoc();
         }}
       >
-        hello
+        Post
       </button>
+      <button
+        onClick={() => {
+          deleteCity();
+        }}
+      >
+        Delete
+      </button>
+
+      {data.map((posts) => {
+        return (
+          <p>
+            Origin: {posts.Origin}, Destination: {posts.Destination}
+          </p>
+        );
+      })}
     </div>
   );
 }
