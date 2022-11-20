@@ -469,7 +469,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@firebase/app@npm:0.8.4":
+"@firebase/app@npm:0.8.4, @firebase/app@npm:^0.8.4":
   version: 0.8.4
   resolution: "@firebase/app@npm:0.8.4"
   dependencies:
@@ -1206,6 +1206,13 @@ __metadata:
   version: 1.1.0
   resolution: "@protobufjs/utf8@npm:1.1.0"
   checksum: f9bf3163d13aaa3b6f5e6fbf37a116e094ea021c0e1f2a7ccd0e12a29e2ce08dafba4e8b36e13f8ed7397e1591610ce880ed1289af4d66cf4ace8a36a9557278
+  languageName: node
+  linkType: hard
+
+"@remix-run/router@npm:1.0.3":
+  version: 1.0.3
+  resolution: "@remix-run/router@npm:1.0.3"
+  checksum: 7e535f3c24bf6b0a48aff3de70ee74e5402fe93105aa9bd01f275d5d8f5a9a8a7cadec08d18cf5544d4f24bc9d7a091abc1c9d4ea8efb2893e9077f104a51459
   languageName: node
   linkType: hard
 
@@ -2842,6 +2849,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dialog-polyfill@npm:^0.4.7":
+  version: 0.4.10
+  resolution: "dialog-polyfill@npm:0.4.10"
+  checksum: f5f472542a059ade7f1f19bc7bf7acf19210a1d89f9dda99cc67027f58709307c8c8faff9e4217cf9ef4d06ef0be3bf9885d48a7304e0f5b01b4f36c0e4570e1
+  languageName: node
+  linkType: hard
+
 "dot-prop@npm:^5.2.0":
   version: 5.3.0
   resolution: "dot-prop@npm:5.3.0"
@@ -3671,6 +3685,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"firebaseui@npm:^6.0.2":
+  version: 6.0.2
+  resolution: "firebaseui@npm:6.0.2"
+  dependencies:
+    dialog-polyfill: ^0.4.7
+    material-design-lite: ^1.2.0
+  peerDependencies:
+    firebase: ^9.1.3
+  checksum: bbf88171ac19ecd9f36ecbfa95bedda359fe55d2179f4cf876ebf29a97b63b846df0ebed3802760c222bc47f13b0452aaf5ef965748c76907f8b7b528097b32a
+  languageName: node
+  linkType: hard
+
 "fn.name@npm:1.x.x":
   version: 1.1.0
   resolution: "fn.name@npm:1.1.0"
@@ -3725,6 +3751,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "frontend@workspace:."
   dependencies:
+    "@firebase/app": ^0.8.4
     "@firebase/firestore": ^3.7.3
     "@types/react": ^18.0.24
     "@types/react-dom": ^18.0.8
@@ -3732,8 +3759,11 @@ __metadata:
     firebase: ^9.14.0
     firebase-admin: ^11.2.1
     firebase-tools: ^11.16.0
+    firebaseui: ^6.0.2
     react: ^18.2.0
     react-dom: ^18.2.0
+    react-google-button: ^0.7.2
+    react-router-dom: ^6.4.3
     vite: ^3.2.3
   languageName: unknown
   linkType: soft
@@ -5276,7 +5306,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"loose-envify@npm:^1.1.0":
+"loose-envify@npm:^1.1.0, loose-envify@npm:^1.4.0":
   version: 1.4.0
   resolution: "loose-envify@npm:1.4.0"
   dependencies:
@@ -5435,6 +5465,13 @@ __metadata:
   bin:
     marked: bin/marked.js
   checksum: 1593e0632ff8dee1b9c8b669f26c8ce41e675bcb08ef75052845d4943db2c4d887edacd5b2120cf99a2cc06e9fbffc346ebaf98a7555273fda6a935adbfacf50
+  languageName: node
+  linkType: hard
+
+"material-design-lite@npm:^1.2.0":
+  version: 1.3.0
+  resolution: "material-design-lite@npm:1.3.0"
+  checksum: f5d45f84408feb11c6e6da2389b69f73cbef3954b9259eced1f25070ad6e299f59782ca7e63e37635bdc177aea69a58aaa7b03fb9f74070a9dd6a44364d6bc9a
   languageName: node
   linkType: hard
 
@@ -5819,7 +5856,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"object-assign@npm:^4":
+"object-assign@npm:^4, object-assign@npm:^4.1.1":
   version: 4.1.1
   resolution: "object-assign@npm:4.1.1"
   checksum: fcc6e4ea8c7fe48abfbb552578b1c53e0d194086e2e6bbbf59e0a536381a292f39943c6e9628af05b5528aa5e3318bb30d6b2e53cadaf5b8fe9e12c4b69af23f
@@ -6173,6 +6210,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"prop-types@npm:^15.7.2":
+  version: 15.8.1
+  resolution: "prop-types@npm:15.8.1"
+  dependencies:
+    loose-envify: ^1.4.0
+    object-assign: ^4.1.1
+    react-is: ^16.13.1
+  checksum: c056d3f1c057cb7ff8344c645450e14f088a915d078dcda795041765047fa080d38e5d626560ccaac94a4e16e3aa15f3557c1a9a8d1174530955e992c675e459
+  languageName: node
+  linkType: hard
+
 "proto3-json-serializer@npm:^1.0.0":
   version: 1.1.0
   resolution: "proto3-json-serializer@npm:1.1.0"
@@ -6401,10 +6449,52 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-google-button@npm:^0.7.2":
+  version: 0.7.2
+  resolution: "react-google-button@npm:0.7.2"
+  dependencies:
+    prop-types: ^15.7.2
+  peerDependencies:
+    react: "*"
+  checksum: 7d55d4cc7c6f00ed1a6847d9d8b37ded602309e827170e22dfa0045f2a511c802f64105fb924936b12c0dc8375eb202f6f846a0997ebba15130057e101f23aa7
+  languageName: node
+  linkType: hard
+
+"react-is@npm:^16.13.1":
+  version: 16.13.1
+  resolution: "react-is@npm:16.13.1"
+  checksum: f7a19ac3496de32ca9ae12aa030f00f14a3d45374f1ceca0af707c831b2a6098ef0d6bdae51bd437b0a306d7f01d4677fcc8de7c0d331eb47ad0f46130e53c5f
+  languageName: node
+  linkType: hard
+
 "react-refresh@npm:^0.14.0":
   version: 0.14.0
   resolution: "react-refresh@npm:0.14.0"
   checksum: dc69fa8c993df512f42dd0f1b604978ae89bd747c0ed5ec595c0cc50d535fb2696619ccd98ae28775cc01d0a7c146a532f0f7fb81dc22e1977c242a4912312f4
+  languageName: node
+  linkType: hard
+
+"react-router-dom@npm:^6.4.3":
+  version: 6.4.3
+  resolution: "react-router-dom@npm:6.4.3"
+  dependencies:
+    "@remix-run/router": 1.0.3
+    react-router: 6.4.3
+  peerDependencies:
+    react: ">=16.8"
+    react-dom: ">=16.8"
+  checksum: 67a44d8dc45761a1c88793cac73839bb657168ef61b9473eb39b186b4a3ea1472454fd96f8997dc541cb1e79a723d62f9503cbc9179b63b8f1d634ed6d2b079a
+  languageName: node
+  linkType: hard
+
+"react-router@npm:6.4.3":
+  version: 6.4.3
+  resolution: "react-router@npm:6.4.3"
+  dependencies:
+    "@remix-run/router": 1.0.3
+  peerDependencies:
+    react: ">=16.8"
+  checksum: b89c0495c6837b1457915c08c5acc4eb7a2e9e3fae0420faf9bfc6311ecdfe78627cc1034c0e975bccd9aeeb70d1dcc5021322779dd3053d94c47e37339d77eb
   languageName: node
   linkType: hard
 
