@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
+import { UserAuth } from "../../../backend/context/AuthContext";
 
 import "../App.css";
 
-import { auth, db } from "../firebaseConfig";
+import { auth, db } from "../../../backend/firebaseConfig";
 import {
   doc,
   collection,
@@ -17,63 +18,10 @@ import {
 
 import { Link } from "react-router-dom";
 
-/**
- * Render user1's posts
- * Create a New Post
- * Delete a Post
- * Update a Post
- *
- */
-
-/**
- *
- * users:{
- *  user1:{
- *  posts:{
- *  post1:{
- *   Date:
- *   Location:
- *   Etc
- * }
- *  post2:{}
- * }
- *  profile:{
- *  name: Aidan
- *  age: 18
- * }
- *  frinds:{}
- *  }
- *  user2:{}
- * }
- *
- */
 const PROVIDER_ID =
   "279328662755-2eo7on38uql0ei0q93laskrs2k23cn34.apps.googleusercontent.com";
 
 function Home() {
-  //Unused
-  async function write(year) {
-    try {
-      const docRef = await addDoc(collection(db, "posts"), {
-        born: year,
-      });
-      console.log("Document written with ID: ", docRef.id);
-    } catch (e) {
-      console.error("Error adding document: ", e);
-    }
-  }
-
-  //Unused
-  //This sets the content of the LA in collection posts to the following, it either creates or overwrites
-  async function overWrite() {
-    await setDoc(doc(db, "posts", "LA"), {
-      name: "Los Angeles",
-      state: "CA",
-      country: "USA 2",
-    });
-    console.log("overwrite called");
-  }
-
   //Used
   //This is useful for creating something like a new post
   async function newDoc() {
@@ -138,10 +86,12 @@ function Home() {
   }
 
   const [data, setData] = useState([]);
+  const { logOut, user } = UserAuth();
 
   return (
     <div className="App">
       <h1>My App</h1>
+      <p>{user?.uid}</p>
       {
         // users.map((user) => {
         //   return (
@@ -168,9 +118,6 @@ function Home() {
       >
         Delete
       </button>
-      <Link to={"/signin"}>
-        <button>hi</button>
-      </Link>
 
       {data.map((posts) => {
         return (
