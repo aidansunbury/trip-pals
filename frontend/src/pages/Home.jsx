@@ -15,6 +15,8 @@ import {
   where,
 } from "firebase/firestore";
 
+import { Link } from "react-router-dom";
+
 /**
  * Render user1's posts
  * Create a New Post
@@ -79,7 +81,7 @@ function Home() {
     const docRef = await addDoc(
       collection(db, "/Users/UlY7Z2oUGbxRDNztYEWE/Posts"),
       {
-        Destination: "city3",
+        Destination: "city4",
         Origin: "city2",
       }
     );
@@ -166,6 +168,9 @@ function Home() {
       >
         Delete
       </button>
+      <Link to={"/signin"}>
+        <button>hi</button>
+      </Link>
 
       {data.map((posts) => {
         return (
