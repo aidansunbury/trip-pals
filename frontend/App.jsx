@@ -18,7 +18,7 @@ import "./src/App.css";
 export default function App() {
   return (
    
-      
+      <div id="app">
       <AuthContextProvider>
         <Navbar />
         <Routes>
@@ -36,6 +36,7 @@ export default function App() {
           />
         </Routes>
       </AuthContextProvider>
+      </div>
     
   );
 }

@@ -2,6 +2,7 @@ import React from 'react';
 
 function CreatePost() {
     return ( 
+        
         <div id="create-post-background">
             <form >
                 <label class="create-post-label center" id="create-post-header">Create a Post!</label>
@@ -46,6 +47,7 @@ function CreatePost() {
             </form>
             
         </div>
+        
      );
 }
 

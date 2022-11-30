@@ -59,6 +59,9 @@
   padding: 15px 5px;
   font-size: 30px;
   font-weight: bold;
+  max-width: max-content;
+  margin-right: auto;
+  margin-left: auto;
   
   
 }
@@ -146,6 +149,8 @@
 
 }
 
+
+
 /* Post Component Styling */
 
 #post-comp-container {
@@ -216,6 +221,7 @@
   background-color: #358BB0;
   padding-left: 70px;
   padding-right: 70px;
+  width: 100%;
   
 }
 
@@ -239,4 +245,6 @@
   text-decoration: none;
 
 }
+
+
 
