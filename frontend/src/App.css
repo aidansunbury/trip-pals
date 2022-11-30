@@ -1,3 +1,5 @@
+
+
 #root {
   margin: 0 auto;
   padding-bottom: 35px;
@@ -53,7 +55,7 @@
  /* Create Post Page Styling */
 
 #create-post-background {
-  margin-top: 15px;
+  margin-top: 45px;
   background-color: #D7EDF6;
   color: #000000;
   padding: 15px 5px;
@@ -209,6 +211,7 @@
   font-weight: 500;
   background-color: #D23131;
   text-decoration: none;
+  margin-top: 45px;
 }
 
 #feed-container {
@@ -218,7 +221,7 @@
 /* Navbar Styling */
 
 .navbar {
-  margin: 0 0 30px 0;
+  margin: 0 0 0 0;
   background-color: #358BB0;
   padding-left: 70px;
   padding-right: 70px;
@@ -230,6 +233,11 @@
   color: #FFFFFF;
   font-size: 30px;
   font-weight: 700;
+  text-decoration: none;
+}
+
+.navbar-header:active {
+  color: white;
 }
 
 .nav {
@@ -309,4 +317,115 @@
   margin-left: 30px;
   width: 25%;
   
+}
+
+/* Home Page Styling */
+
+#home-header {
+  height: 500px;
+  margin-top: 0;
+
+  background-image: url('images/skybackground.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 5%;
+  padding-left: 6%;
+
+}
+
+#plane-img {
+  
+  float: right;
+  margin-top: -17%;
+  margin-right: 5%;
+  
+}
+
+.home-header-txt {
+  font-size: 70px;
+  font-weight: 800;
+  color: #0B3749;
+}
+
+#special-red {
+  color: #D23131;
+}
+
+.home-header-btn {
+  font-size: 26px;
+  font-weight: 500px;
+  margin-top: 1%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+#home-login-btn {
+  background-color: transparent;
+  color: #0B3749;
+  border: 2px solid #0B3749;
+  border-radius: 5px; 
+}
+
+#home-get-btn {
+  background-color: #0B3749;
+  color: white;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+#home-desc-txt {
+  font-size: 30px;
+  font-weight: 400;
+  color: #D23131;
+  margin-top: 83px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 80%;
+}
+
+#review-container {
+  display: flex;
+  margin-top: 100px;
+  margin-bottom: 70px;
+  justify-content: space-around;
+}
+
+.home-review-container {
+  max-width: 25%;
+}
+
+.reviewer-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.review-desc {
+  margin-top: 40px;
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+
+}
+
+.review-title {
+  margin-top: 30px;
+  color: #358BB0;
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.reviewer-name {
+  margin-top: 25px;
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.red-bold {
+  color: #D23131;
+  font-weight: bold;
 }

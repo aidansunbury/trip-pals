@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { UserAuth } from "../../context/AuthContext";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -19,7 +19,8 @@ const Navbar = () => {
     <div className="navbar">
       <div className="container-fluid">
         <div className="navbar-header">
-          TripPals
+          <NavLink to="/" className="navbar-header">TripPals</NavLink>
+          
         </div>      
         <ul className="nav">
           <li className="nav-items">Hi, {user?.displayName}</li>

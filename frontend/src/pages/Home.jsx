@@ -2,7 +2,12 @@ import { useState, useEffect } from "react";
 import { UserAuth } from "../../context/AuthContext";
 import "../App.css";
 
+import Freya from '../images/freya.png';
+import Jenelle from '../images/jenelle.png';
+import Karla from '../images/karla.png';
+
 import { auth, db } from '../../firebaseConfig';
+import PlaneImage from '../images/plane.png';
 
 import {
   doc,
@@ -89,9 +94,45 @@ function Home() {
   const { logOut, user } = UserAuth();
 
   return (
-    <div className="App">
-      <h1>My App</h1>
-      <p>{user?.uid}</p>
+    <div className="home-container">
+      <div id="home-header">
+        <div>
+          <h1 class="home-header-txt">College Travel</h1>
+          <h1 class="home-header-txt">Made <span id="special-red">Easier.</span></h1>
+          <div>
+            <Link to="/signup"><button id="home-get-btn" class="home-header-btn">Get Started</button></Link>
+            <Link to="/signin"><button id="home-login-btn" class="home-header-btn">Log In</button></Link>
+          </div>
+        </div>
+        <img id="plane-img" src={PlaneImage} alt="plane emblem"/>
+      </div>
+      <h1 id="home-desc-txt">Don't want to be a lonely when going home? Use TripPals to find some rando to go with you!</h1>
+      <div id="review-container">
+        <div class="home-review-container">
+          <img class="reviewer-img" src={Freya} alt="freya"/>
+          <h1 class="review-title">Freya's Experience</h1>
+          <h1 class="review-desc">“TripPals has helped <span class="red-bold">ease my anxiety</span> of flying home from college for the first time. Who would've thought that someone from my compsci class was going to be in the <span class="red-bold">same flight?”</span></h1>
+          <h1 class="reviewer-name">- Freya</h1>
+
+        </div>
+        
+        <div class="home-review-container">
+          <img class="reviewer-img" src={Jenelle} alt="jenelle"/>
+          <h1 class="review-title">Jenelle's Experience</h1>
+          <h1 class="review-desc">“Excited to pack for our <span class="red-bold">next car trip together!</span> Thanks TripPals!!!”</h1>
+          <h1 class="reviewer-name">- Jenelle</h1>
+
+        </div>
+        
+        <div class="home-review-container">
+          <img class="reviewer-img" src={Karla} alt="karla"/>
+          <h1 class="review-title">Karla's Experience</h1>
+          <h1 class="review-desc">“Came looking for someone fly with and <span class="red-bold">found a best friend.</span> Glad to finally have someone else from Seattle!”</h1>
+          <h1 class="reviewer-name">- Karla</h1>
+
+        </div>
+      </div>
+      {/* <p>{user?.uid}</p> */}
       {
         // users.map((user) => {
         //   return (
@@ -104,7 +145,7 @@ function Home() {
         // })
       }
 
-      <button
+      {/* <button
         onClick={() => {
           newDoc();
         }}
@@ -125,7 +166,7 @@ function Home() {
             Origin: {posts.Origin}, Destination: {posts.Destination}
           </p>
         );
-      })}
+      })} */}
     </div>
   );
 }
