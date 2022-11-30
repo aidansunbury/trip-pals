@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { GoogleButton } from "react-google-button";
-import { UserAuth } from "../../../backend/context/AuthContext";
+import { UserAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
-import { handleSignIn } from "../../../backend/functions";
+import { handleSignIn } from "../../functions";
 
 const SignIn = () => {
   const { googleSignIn, user } = UserAuth();

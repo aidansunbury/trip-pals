@@ -2,11 +2,11 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 
-import { AuthContextProvider } from "../../backend/context/AuthContext";
+import { AuthContextProvider } from "../context/AuthContext";
 import Account from "./pages/Account";
 import Home from "./pages/Home";
 import SignIn from "./pages/SignIn";
-import Protected from "../../backend/context/Protected";
+import Protected from "../context/Protected";
 
 import "./App.css";
 
