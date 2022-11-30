@@ -137,3 +137,62 @@
   font-family: inherit;
 
 }
+
+/* Post Component Styling */
+
+#post-comp-container {
+  background-color: #D7EDF6;
+  padding: 50px 40px;
+  width: 70%;
+  margin: 30px auto;
+}
+
+#post-comp-mode-txt {
+  color: #D23131;
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
+}
+
+#post-comp-locations-txt {
+  color: #212121;
+  font-size: 36px;
+  font-weight: 600;
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+#post-comp-date-txt {
+  font-size: 30px;
+  font-weight: 400;
+  color: #000000;
+  margin-top: 5px;
+}
+
+#post-comp-desc-txt {
+  color: #187096;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+#post-comp-name-txt {
+  color: #358BB0;
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+#post-comp-username {
+  color: black;
+  
+}
+
+/* Post Feed Page Styling */
+#feed-post-btn {
+  width: 75%;
+  color: #FFFFFF;
+  font-size: 26;
+  font-weight: 500;
+  background-color: #D23131;
+  text-decoration: none;
+}

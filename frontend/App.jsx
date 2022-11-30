@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./src/components/Navbar";
 import CreatePost from "./src/pages/CreatePost";
+import PostFeed from "./src/pages/PostFeed";
 
 import { AuthContextProvider } from "./context/AuthContext";
 import Account from "./src/pages/Account";
@@ -24,6 +25,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/createpost" element={<CreatePost />} />
+          <Route path="/feed" element={<PostFeed />} />
           <Route
             path="/account"
             element={
