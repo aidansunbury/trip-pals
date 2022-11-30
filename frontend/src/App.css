@@ -5,6 +5,16 @@
   text-align: center;
 }
 
+.center {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.left {
+  text-align: left;
+  margin-right: auto;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -38,4 +48,92 @@
 
 .read-the-docs {
   color: #888;
+}
+
+ /* Create Post Page Styling */
+
+#create-post-background {
+  margin-top: 15px;
+  background-color: #D7EDF6;
+  color: #000000;
+  padding: 15px 5px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#create-post-header {
+  color: #187096;
+  font-size: 36px;
+  font-weight: bolder;
+  margin-bottom: 55px;
+}
+
+#create-post-btn {
+  background-color: transparent;
+  color: black;
+  border: 2px solid black;
+  margin-bottom: 15px;
+  font-size: 26px;
+  font-weight: 300;
+}
+
+.create-post-label {
+  display: block;
+  margin: 40px 0;
+}
+
+.create-post-location-container {
+  margin: 40px 0;
+}
+
+.create-post-text-input {
+  background-color: transparent;
+  size: 40px;
+  border: transparent;
+  border-bottom: 2px solid black;
+  color: black;
+  font-size: 30px;
+  font-weight: 500;
+  padding: 3px;
+  width: 35%;
+}
+
+#create-post-location-background {
+  margin-bottom: 70px;
+}
+
+.create-post-mode-label {
+  margin-left: 15%;
+}
+
+.create-post-radio {
+  margin: 40px 0;
+
+}
+
+.create-post-radio-btn {
+  transform: scale(1.5);
+  background-color: transparent;
+}
+
+#date-time-container {
+  margin: 60px 0 80px;
+}
+
+#date-input {
+  width: 20%;
+}
+
+#time-input {
+  width: 10%;
+}
+
+#create-post-description {
+  background-color: white;
+  color: black;
+  font-size: 30px;
+  width: 70%;
+  padding: 5px 10px;
+  font-family: inherit;
+
 }

@@ -1,7 +1,8 @@
 import React from "react";
-import { UserAuth } from "../../../backend/context/AuthContext";
+import { UserAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
-import { post } from "../../../backend/functions";
+import { post } from "../../functions"
+import { Link } from 'react-router-dom';
 
 const Account = () => {
   const { logOut, user } = UserAuth();
@@ -25,9 +26,11 @@ const Account = () => {
         <button
           onClick={() => {
             post(user);
+            <Link to="/createpost">Post</Link>
           }}
         >
-          Post
+          
+          
         </button>
 
         <button>Delete</button>

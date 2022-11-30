@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import { UserAuth } from "../../../backend/context/AuthContext";
-
+import { UserAuth } from "../../context/AuthContext";
 import "../App.css";
 
-import { auth, db } from "../../../backend/firebaseConfig";
+import { auth, db } from '../../firebaseConfig';
+
 import {
   doc,
   collection,
