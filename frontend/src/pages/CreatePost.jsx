@@ -4,13 +4,13 @@ function CreatePost() {
     return ( 
         <div id="create-post-background">
             <form >
-                <label class="create-post-label" id="create-post-header">Create a Post!</label>
+                <label class="create-post-label center" id="create-post-header">Create a Post!</label>
                 <div id="create-post-location-background">
-                    <div class="create-post-location-container">
+                    <div class="create-post-location-container center">
                         <label>I'm traveling from </label>
                         <input type="text" class="create-post-text-input"/>
                     </div>
-                    <div class="create-post-location-container">
+                    <div class="create-post-location-container center">
                         <label>and going to </label>
                         <input type="text" class="create-post-text-input"/>
                     </div>
@@ -20,15 +20,15 @@ function CreatePost() {
                     <label class="create-post-label left">I'm traveling by</label>
                     <div class="create-post-radio">
                         <input type="radio" value="Plane" name="traveloption" id="radio-plane" class="create-post-radio-btn"/>
-                        <label for="radio-plane"> Plane</label><br/>
+                        <label class="radio-labels" for="radio-plane">Plane</label><br/>
                     </div>
                     <div class="create-post-radio">
                         <input type="radio" value="Carpool" name="traveloption" id="radio-carpool" class="create-post-radio-btn"/>
-                        <label for="radio-carpool"> Carpool</label><br/>
+                        <label class="radio-labels" for="radio-carpool">Carpool</label><br/>
                     </div>
                     <div class="create-post-radio">
                         <input type="radio" value="Train" name="traveloption" id="radio-train" class="create-post-radio-btn"/>
-                        <label for="radio-train"> Train</label><br/>
+                        <label class="radio-labels" for="radio-train">Train</label><br/>
                     </div>
                 </div>
                 
@@ -42,7 +42,7 @@ function CreatePost() {
                 <label class="create-post-label left create-post-mode-label">Message</label>
 
                 <textarea type="text" placeholder="Write a note..." rows="5" class="left create-post-mode-label create-post-label" id="create-post-description"> </textarea>
-                <button id="create-post-btn">Post Trip</button>
+                <button class="center" id="create-post-btn">Post Trip</button>
             </form>
             
         </div>

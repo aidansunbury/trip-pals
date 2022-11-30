@@ -17,8 +17,8 @@ function PostFeed() {
 
     }
     return (
-        <div>
-            <Link to="/createpost"><button id="feed-post-btn" >POST A TRIP</button></Link>
+        <div id="feed-container">
+            <Link class="feed-post-btn" to="/createpost"><button class="center feed-post-btn" >POST A TRIP</button></Link>
             <PostComponent travel={newPost.travel} desc={newPost.desc} startLocation={newPost.startLocation} endLocation={newPost.endLocation} day={newPost.day} month={newPost.month} date={newPost.date} time={newPost.time} name={newPost.name}/>
         </div>
       );
