@@ -262,16 +262,16 @@
 
 /* Sign Up Page Styling */
 
-#sign-up-container {
+.sign-up-container {
   text-align: center;
   margin-top: 100px;
 }
 
-#sign-up-title {
+.sign-up-title {
   font-weight: 700;
   font-size: 36px;
   color: #000000;
-  margin-bottom: 100px;
+  margin-bottom: 80px;
 }
 
 .sign-up-input {
@@ -291,11 +291,11 @@
   width: 65%;
 }
 
-#sign-up-btn-wrapper {
+.sign-up-btn-wrapper {
   margin-bottom: 100px;
 }
 
-#sign-up-continue-btn {
+.sign-up-continue-btn {
   background-color: transparent;
   color: black;
   font-size: 26px;
@@ -307,7 +307,7 @@
   padding: 10px 0;
 }
 
-#sign-up-done-btn {
+.sign-up-done-btn {
   font-weight: 400;
   font-size: 20px;
   background-color: transparent;
