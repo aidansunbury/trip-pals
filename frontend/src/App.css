@@ -103,6 +103,7 @@
   width: 35%;
   margin-left: 10px;
   margin-right: 10px;
+  outline: none;
 }
 
 #create-post-location-background {
@@ -246,5 +247,66 @@
 
 }
 
+#nav-btn-logout {
+  background-color: transparent;
+  border: none;
+}
 
+/* Sign Up Page Styling */
 
+#sign-up-container {
+  text-align: center;
+  margin-top: 100px;
+}
+
+#sign-up-title {
+  font-weight: 700;
+  font-size: 36px;
+  color: #000000;
+  margin-bottom: 100px;
+}
+
+.sign-up-input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid black;
+  color: black;
+  font-weight: 400;
+  font-size: 30px;
+  text-align: center;
+  padding: 5px;
+  outline: none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 68px;
+  width: 65%;
+}
+
+#sign-up-btn-wrapper {
+  margin-bottom: 100px;
+}
+
+#sign-up-continue-btn {
+  background-color: transparent;
+  color: black;
+  font-size: 26px;
+  font-weight: 500;
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 25%;
+  padding: 10px 0;
+}
+
+#sign-up-done-btn {
+  font-weight: 400;
+  font-size: 20px;
+  background-color: transparent;
+  color: black;
+  outline: none;
+  border: none;
+  margin-left: 30px;
+  width: 25%;
+  
+}

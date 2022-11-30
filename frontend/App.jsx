@@ -9,6 +9,7 @@ import Account from "./src/pages/Account";
 import Home from "./src/pages/Home";
 import SignIn from "./src/pages/SignIn";
 import Protected from "./context/Protected";
+import SignUp from './src/pages/SignUp';
 
 
 import "./src/App.css";
@@ -26,6 +27,7 @@ export default function App() {
           <Route path="/signin" element={<SignIn />} />
           <Route path="/createpost" element={<CreatePost />} />
           <Route path="/feed" element={<PostFeed />} />
+          <Route path="/signup" element={<SignUp />} />
           <Route
             path="/account"
             element={

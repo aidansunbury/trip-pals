@@ -22,8 +22,8 @@ const Navbar = () => {
           TripPals
         </div>      
         <ul className="nav">
-          <li className="nav-items">Hi, Name</li>
-          <li className="nav-items">LOG OUT</li>
+          <li className="nav-items">Hi, {user?.displayName}</li>
+          <li className="nav-items"><Link to="/signin"><button id="nav-btn-logout" onClick={handleSignOut}>Log Out</button></Link></li>
         </ul>
       </div>
     </div>
