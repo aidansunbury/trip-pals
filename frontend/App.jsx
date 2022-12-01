@@ -3,14 +3,13 @@ import { Route, Routes } from "react-router-dom";
 import Navbar from "./src/components/Navbar";
 import CreatePost from "./src/pages/CreatePost";
 import PostFeed from "./src/pages/PostFeed";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { AuthContextProvider } from "./context/AuthContext";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { AuthContextProvider } from "./src/context/AuthContext";
 import Account from "./src/pages/Account";
 import Home from "./src/pages/Home";
 import SignIn from "./src/pages/SignIn";
-import Protected from "./context/Protected";
-import SignUp from './src/pages/SignUp';
-
+import Protected from "./src/context/Protected";
+import SignUp from "./src/pages/SignUp";
 
 import "./src/App.css";
 
@@ -18,8 +17,7 @@ import "./src/App.css";
 
 export default function App() {
   return (
-   
-      <div id="app">
+    <div id="app">
       <AuthContextProvider>
         <Navbar />
         <Routes>
@@ -38,7 +36,6 @@ export default function App() {
           />
         </Routes>
       </AuthContextProvider>
-      </div>
-    
+    </div>
   );
 }
