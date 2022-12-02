@@ -23,8 +23,8 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/signin" element={<SignIn />} />
-          <Route path="/createpost" element={<CreatePost />} />
-          <Route path="/feed" element={<PostFeed />} />
+          <Route path="/createpost" element={<Protected><CreatePost /></Protected>} />
+          <Route path="/feed" element={<Protected><PostFeed /></Protected>} />
           <Route path="/signup" element={<SignUp />} />
           <Route
             path="/account"

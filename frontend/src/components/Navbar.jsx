@@ -2,6 +2,7 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import { UserAuth } from "../context/AuthContext";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Protected from "../context/Protected";
 
 const Navbar = () => {
   const { user, logOut } = UserAuth();
@@ -63,7 +64,6 @@ function NavBarLoggedIn() {
     }
   };
   return (  
-
     <ul className="nav">
           <li className="nav-items">
             <NavLink to="/account" className="nav-items">Hi, {user?.displayName}</NavLink>
@@ -73,19 +73,18 @@ function NavBarLoggedIn() {
               Feed
             </NavLink>
           </li>
-          <li className="nav-items">
+          {/* <li className="nav-items">
             <NavLink
               to="/account"
               className="nav-items"
             >
               Account
             </NavLink>
-          </li>
+          </li> */}
           <li className="nav-items">
-            <NavLink to="/signin" className="nav-items">
-              <button id="nav-btn-logout" onClick={handleSignOut}>
+            <NavLink to="/" className="nav-items" onClick={handleSignOut}>
+              
                 Log Out
-              </button>
             </NavLink>
           </li>
     </ul>

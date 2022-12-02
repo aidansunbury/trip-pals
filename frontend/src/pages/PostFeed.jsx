@@ -1,6 +1,7 @@
 import React from "react";
 import PostComponent from "../components/PostComponent";
 import { Link } from "react-router-dom";
+ 
 
 function PostFeed() {
   const newPost = {
@@ -14,6 +15,7 @@ function PostFeed() {
     time: "6:30 PM",
     name: "Bob",
   };
+  console.log()
   return (
     <div id="feed-container">
       <Link class="feed-post-btn" to="/createpost">

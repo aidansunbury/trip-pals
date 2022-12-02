@@ -247,7 +247,7 @@
 
 .nav-items {
   display: inline-block;
-  margin-left: 40px;
+  margin-left: 15px;
   color: white;
   font-size: 20px;
   font-weight: 500;
@@ -256,10 +256,10 @@
 }
 
 #nav-btn-logout {
-  margin-left: 0;
-  padding-left: 3px;
   background-color: transparent;
   border: none;
+  margin-left: 0;
+
 }
 
 /* Sign Up Page Styling */
