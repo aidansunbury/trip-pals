@@ -1,7 +1,7 @@
 import React from "react";
 import { UserAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
-import { post } from "../functions";
+import { createPost } from "../functions";
 import { getMyPosts, getAllPosts } from "../functions";
 import { Link } from "react-router-dom";
 
@@ -32,7 +32,7 @@ const Account = () => {
         <p>{user?.uid}</p>
         <button
           onClick={() => {
-            post(user);
+            createPost(user);
             <Link to="/createpost">Post</Link>;
           }}
         ></button>

@@ -100,7 +100,7 @@ export async function overWrite(path, id, data) {
   //await setDoc(doc(db, path), data); no id passed should auto id
   console.log("overwrite called");
 }
-export async function post(
+export async function createPost(
   user,
   data = { ...post_data, time_posted: new Date() }
 ) {

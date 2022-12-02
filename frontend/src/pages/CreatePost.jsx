@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { post } from "../functions";
+import { createPost } from "../functions";
 import { UserAuth } from "../context/AuthContext";
 
 function CreatePost() {
@@ -21,7 +21,7 @@ function CreatePost() {
   const handleSubmit = (event) => {
     event.preventDefault();
     //console.log(contactInfo);
-    post(user, contactInfo);
+    createPost(user, contactInfo);
     setContactInfo({ from: "", to: "", day: "", time: "", message: "" });
   };
 
