@@ -67,20 +67,20 @@ function NavBarLoggedIn() {
     <ul className="nav">
           <li className="nav-items">Hi, {user?.displayName}</li>
           <li className="nav-items">
-            <NavLink to="/feed" style={{ textDecoration: "none", color: "white" }}>
+            <NavLink to="/feed" className="nav-items">
               Feed
             </NavLink>
           </li>
           <li className="nav-items">
             <NavLink
               to="/account"
-              style={{ textDecoration: "none", color: "white" }}
+              className="nav-items"
             >
               Account
             </NavLink>
           </li>
           <li className="nav-items">
-            <NavLink to="/signin">
+            <NavLink to="/signin" className="nav-items">
               <button id="nav-btn-logout" onClick={handleSignOut}>
                 Log Out
               </button>
