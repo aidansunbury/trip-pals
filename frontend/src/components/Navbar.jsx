@@ -65,7 +65,9 @@ function NavBarLoggedIn() {
   return (  
 
     <ul className="nav">
-          <li className="nav-items">Hi, {user?.displayName}</li>
+          <li className="nav-items">
+            <NavLink to="/account" className="nav-items">Hi, {user?.displayName}</NavLink>
+            </li>
           <li className="nav-items">
             <NavLink to="/feed" className="nav-items">
               Feed
