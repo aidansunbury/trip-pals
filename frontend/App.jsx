@@ -18,12 +18,11 @@ import "./src/App.css";
 export default function App() {
   return (
     <div id="app">
-      <AuthContextProvider>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/signin" element={<SignIn />} />
-          <Route path="/createpost" element={<CreatePost />} />
+          <Route path="/createpost" element={<Protected><CreatePost /> </Protected>} />
           <Route path="/feed" element={<PostFeed />} />
           <Route path="/signup" element={<SignUp />} />
           <Route
@@ -35,7 +34,6 @@ export default function App() {
             }
           />
         </Routes>
-      </AuthContextProvider>
     </div>
   );
 }
