@@ -1,13 +1,24 @@
 import React from "react";
+import { useEffect, useState } from "react";
 import { UserAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { createPost } from "../functions";
-import { getMyPosts, getAllPosts } from "../functions";
+import { getMyPosts, getAllPosts, getProfile } from "../functions";
 import { Link } from "react-router-dom";
 
 const Account = () => {
   const { logOut, user } = UserAuth();
   const navigate = useNavigate();
+
+  const [profileData, setProfileData] = useState("");
+  //const [refresh, setRefresh] = useState(0);
+
+  useEffect(() => {
+    let data = getProfile(user?.uid);
+    data.then((value) => setProfileData(value));
+    console.log("hi");
+    console.log(profileData);
+  }, []);
 
   const handleSignOut = async () => {
     try {
@@ -24,28 +35,22 @@ const Account = () => {
         style={{
           display: "flex",
           justifyContent: "center",
+          textAlign: "left",
+          marginLeft: "40px",
           flexDirection: "column",
         }}
       >
+        <h2 style={{ textAlign: "left", marginLeft: "30px" }}>Profile</h2>
         <p>Welcome, {user?.displayName}</p>
-        <p>{user?.email}</p>
-        <p>{user?.uid}</p>
-        <button
-          onClick={() => {
-            createPost(user);
-            <Link to="/createpost">Post</Link>;
-          }}
-        ></button>
+        <p>Email: {user?.email}</p>
+        <p>Phone: {profileData.phone}</p>
+        {/* <p>{user?.uid}</p> */}
+        <p>Age: {profileData.age}</p>
+        <p>Gender: {profileData.gender}</p>
+        <p>Bio: {profileData.bio}</p>
       </div>
       <button onClick={handleSignOut} className="border py-2 px-5 mt-10">
         Logout
-      </button>
-      <button
-        onClick={() => {
-          getAllPosts();
-        }}
-      >
-        test
       </button>
     </div>
   );

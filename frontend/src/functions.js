@@ -24,12 +24,12 @@ let post_data = {
   description: "Description of trip",
 };
 let profile = {
-  name: "User Name",
-  email: "email@gmail.com",
-  phone: "9998887777",
-  age: 100,
+  name: "John Doe",
+  email: "jdberkeley99@gmail.com",
+  phone: "3106997999",
+  age: 23,
   gender: "Male",
-  bio: "description of person",
+  bio: "Stanford student who is less cool than the berkely students.",
 };
 
 export async function handleSignIn(user) {
@@ -85,6 +85,47 @@ export async function getAllPosts() {
 
   //console.log(allPosts);
   return allPosts;
+}
+
+export async function getProfile(id) {
+  const docRef = doc(db, "/Users/", id);
+
+  const snapshot = await getDoc(docRef);
+  return snapshot.data();
+
+  // Below is a monument to bad programming practice
+
+  // // const result = snapshot.data();
+  // // return result;
+  // if (snapshot.exists()) {
+  //   console.log("Document data:", snapshot.data());
+  //   let data = {
+  //     age: snapshot.data().age,
+  //     phone: snapshot.data().phone,
+  //     bio: snapshot.data().bio,
+  //     email: snapshot.data().email,
+  //     gender: snapshot.data().gender,
+  //     name: snapshot.data().name,
+  //   };
+  //   return snapshot.data().age;
+  // } else {
+  //   // doc.data() will be undefined in this case
+  //   console.log("No such document!");
+  // }
+  // const q = query(collection(db, "/Users/"));
+  // const querySnapshot = await getDocs(q);
+
+  // querySnapshot.forEach(async (document) => {
+  //   // doc.data() is never undefined for query doc snapshots
+  //   //console.log(doc.id, " => ", doc.data());
+  //   //console.log(document.id);
+  //   if (document.id == id) {
+  //     console.log("yay");
+  //     console.log(document.data().gender);
+  //     return document.data();
+  //   }
+  // });
+  // return "none";
 }
 
 export async function createUser(user, profile) {

@@ -11,6 +11,7 @@ function CreatePost() {
     day: "",
     time: "",
     message: "",
+    by: user?.displayName,
   });
 
   const handleChange = (event) => {
@@ -22,7 +23,14 @@ function CreatePost() {
     event.preventDefault();
     //console.log(contactInfo);
     createPost(user, contactInfo);
-    setContactInfo({ from: "", to: "", day: "", time: "", message: "" });
+    setContactInfo({
+      from: "",
+      to: "",
+      day: "",
+      time: "",
+      message: "",
+      by: user?.displayName,
+    });
   };
 
   return (
