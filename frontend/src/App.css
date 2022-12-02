@@ -1,8 +1,8 @@
 
-
 #root {
   margin: 0 auto;
   padding-bottom: 35px;
+  overflow-x: hidden;
 }
 
 .center {
@@ -430,4 +430,37 @@
 .red-bold {
   color: #D23131;
   font-weight: bold;
+}
+
+/* Account Page Styling */
+
+#account-container {
+  margin-top: 100px;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#profile-img {
+  border-radius: 50%;
+  width: 100px;
+  margin-left: 10px;
+  border: 1px solid white;
+}
+
+#account-header {
+  margin-top: 30px;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+#email-txt {
+  font-size: 15px;
+  color: grey;
+}
+
+#account-btn-wrapper {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 100px;
 }
