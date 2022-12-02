@@ -1,8 +1,9 @@
 import React from "react";
+import { useEffect, useState } from "react";
 import { UserAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { createPost } from "../functions";
-import { getMyPosts, getAllPosts } from "../functions";
+import { getMyPosts, getAllPosts, getProfile } from "../functions";
 import { Link } from "react-router-dom";
 import ProfileImg from '../images/blankprofile.png'
 import { useState } from "react";
@@ -10,6 +11,16 @@ import { useState } from "react";
 const Account = () => {
   const { logOut, user } = UserAuth();
   const navigate = useNavigate();
+
+  const [profileData, setProfileData] = useState("");
+  //const [refresh, setRefresh] = useState(0);
+
+  useEffect(() => {
+    let data = getProfile(user?.uid);
+    data.then((value) => setProfileData(value));
+    console.log("hi");
+    console.log(profileData);
+  }, []);
 
   const handleSignOut = async () => {
     try {
@@ -21,16 +32,31 @@ const Account = () => {
   const [btnText, setBtnText] = useState("Display My Posts");
 
   return (
-    <div id="account-container">
-      <div id="profile-img-background">
-        <img id="profile-img" src={ProfileImg} alt="Profile image"/>
+
+    <div className="w-[300px] m-auto">
+      <h1 className="text-center text-2xl font-bold pt-12">Account</h1>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          textAlign: "left",
+          marginLeft: "40px",
+          flexDirection: "column",
+        }}
+      >
+        <h2 style={{ textAlign: "left", marginLeft: "30px" }}>Profile</h2>
+        <p>Welcome, {user?.displayName}</p>
+        <p>Email: {user?.email}</p>
+        <p>Phone: {profileData.phone}</p>
+        {/* <p>{user?.uid}</p> */}
+        <p>Age: {profileData.age}</p>
+        <p>Gender: {profileData.gender}</p>
+        <p>Bio: {profileData.bio}</p>
       </div>
-      <h1 id="account-header">{user?.displayName}</h1>
-      <h1 id="email-txt">@{user?.email}</h1>
-      <div id="account-btn-wrapper">
-        <button id="account-display-post-btn" onClick={() => {btnText == "Display My Posts" ? setBtnText("Don't Display My Posts") : setBtnText("Display My Posts")}}>{btnText}</button>
-        <Link to="/createpost"><button>Create a New Post</button></Link>
-      </div>
+      <button onClick={handleSignOut} className="border py-2 px-5 mt-10">
+        Logout
+      </button>
+
     </div>
     // <div className="w-[300px] m-auto">
     //   <h1 className="text-center text-2xl font-bold pt-12">Account</h1>
