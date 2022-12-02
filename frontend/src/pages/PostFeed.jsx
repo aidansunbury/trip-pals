@@ -1,9 +1,11 @@
 import React from "react";
 import PostComponent from "../components/PostComponent";
 import { Link } from "react-router-dom";
+
 import { useEffect, useState } from "react";
 import { getAllPosts } from "../functions";
 import { async } from "@firebase/util";
+
 
 function PostFeed() {
   const [val, setVal] = useState([
@@ -61,7 +63,7 @@ function PostFeed() {
     time: "6:30 PM",
     name: "Bob",
   };
-  console.log();
+
   return (
     <div id="feed-container">
       <Link class="feed-post-btn" to="/createpost">
