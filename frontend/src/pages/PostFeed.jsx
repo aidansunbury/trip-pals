@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function PostFeed() {
   const newPost = {
     travel: "Flight",
-    desc: "Hey! I’m a wuggle heading to Mogsmeade for Thanksgiving. Hmu if you’re taking the same flight or going to the airport around then. I haven’t gone back since college started and would love a buddy to travel with :)",
+    desc: "Hey! I'm a wuggle heading to Mogsmeade for Thanksgiving. Hmu if you’re taking the same flight or going to the airport around then. I haven’t gone back since college started and would love a buddy to travel with :)",
     startLocation: "New York",
     endLocation: "Pennsylvania",
     day: "Sunday",

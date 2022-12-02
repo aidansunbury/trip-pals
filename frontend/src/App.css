@@ -256,6 +256,8 @@
 }
 
 #nav-btn-logout {
+  margin-left: 0;
+  padding-left: 3px;
   background-color: transparent;
   border: none;
 }

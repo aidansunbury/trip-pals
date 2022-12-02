@@ -22,29 +22,9 @@ const Navbar = () => {
             TripPals
           </NavLink>
         </div>
-        <ul className="nav">
-          <li className="nav-items">Hi, {user?.displayName}</li>
-          <li className="nav-items">
-            <Link to="/feed" style={{ textDecoration: "none", color: "white" }}>
-              Feed
-            </Link>
-          </li>
-          <li className="nav-items">
-            <Link
-              to="/account"
-              style={{ textDecoration: "none", color: "white" }}
-            >
-              Account
-            </Link>
-          </li>
-          <li className="nav-items">
-            <Link to="/signin">
-              <button id="nav-btn-logout" onClick={handleSignOut}>
-                Log Out
-              </button>
-            </Link>
-          </li>
-        </ul>
+        <>
+          { user? <NavBarLoggedIn/> : <NavBarUser/>}
+        </>
       </div>
     </div>
     // <div>
@@ -61,3 +41,53 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+function NavBarUser() {
+  return (  
+    <ul className="nav">
+      <li class="nav-items">
+        <NavLink to="/signin" className="nav-items">Sign in</NavLink>
+      </li>
+    </ul>
+  );
+}
+
+function NavBarLoggedIn() {
+  const { user, logOut } = UserAuth();
+
+  const handleSignOut = async () => {
+    try {
+      await logOut();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  return (  
+
+    <ul className="nav">
+          <li className="nav-items">Hi, {user?.displayName}</li>
+          <li className="nav-items">
+            <NavLink to="/feed" style={{ textDecoration: "none", color: "white" }}>
+              Feed
+            </NavLink>
+          </li>
+          <li className="nav-items">
+            <NavLink
+              to="/account"
+              style={{ textDecoration: "none", color: "white" }}
+            >
+              Account
+            </NavLink>
+          </li>
+          <li className="nav-items">
+            <NavLink to="/signin">
+              <button id="nav-btn-logout" onClick={handleSignOut}>
+                Log Out
+              </button>
+            </NavLink>
+          </li>
+    </ul>
+  );
+}
+
+
